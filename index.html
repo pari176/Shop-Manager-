@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
+    .container { max-width: 400px; margin: 50px auto; padding: 20px; background: white; border-radius: 8px; }
+    h2 { text-align: center; }
+    input, button { width: 100%; padding: 10px; margin: 10px 0; }
+    .stats { margin-top: 20px; }
+    .stats div { margin: 10px 0; font-size: 18px; }
+    nav { background:#333; padding:10px; text-align:center; }
+    nav a { color:white; margin:0 10px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="sales.html">Record Sales</a>
+    <a href="reports.html">Reports</a>
+  </nav>
+
+  <div class="container" id="loginPage">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="container" id="dashboardPage" style="display:none;">
+    <h2>Dashboard</h2>
+    <div class="stats">
+      <div>Today's Sales: <span id="sales">0</span></div>
+      <div>Today's Profit: <span id="profit">0</span></div>
+    </div>
+    <button onclick="addItem()">➕ Add Item</button>
+  </div>
+
+  <script>
+    function login() {
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('dashboardPage').style.display = 'block';
+      document.getElementById('sales').innerText = "K500";
+      document.getElementById('profit').innerText = "K120";
+    }
+    function addItem() {
+      alert("Add Item button clicked!");
+    }
+  </script>
+</body>
+</html>
